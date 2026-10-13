@@ -1,0 +1,126 @@
+<!doctype html>
+<!--	========================= -->
+<!--		WELCOME TO THE JUNGLE	  -->
+<!--	========================= -->
+<html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Algo Polish</title>
+<link rel="icon" href="../icons/Pictures_Of_You_48.png"><script src="../js/ui/Day_Tripper.js"></script>
+<link rel="stylesheet" href="../styles/Fashion.css"></head>
+<body>
+<section id="title">
+  <div class="panel hero"><div class="tab"><i></i>ALGO POLISH<em>START</em></div>
+    <div>
+      <h1>Algo<br>Polish</h1>
+      <p class="lede">Polish your algorithm. Keep what you love, discard what you don't.</p>
+      <p id="titleMsg" class="msg"></p>
+      <div class="themes"><button id="lawLine" class="flk glass"></button><button class="flk glass theme-btn"></button></div>
+      <button id="openYt" class="link" hidden></button>
+    </div>
+    <div class="pills">
+      <button class="pill tall" data-src="liked"><span>Liked videos</span></button>
+      <button class="pill tall" data-src="home"><span>Home feed</span></button>
+      <button class="pill tall" data-src="history"><span>Watch history</span></button>
+      <button class="pill tall" data-src="subs"><span>Subscriptions</span></button>
+    </div>
+  </div>
+</section>
+
+<section id="main" hidden>
+  <div class="panel deck"><div class="tab"><i></i>PANEL 01<em>REVIEW</em></div><div class="drophint">Drop to review again</div>
+    <div class="nodes">
+      <div class="node"><b id="cDisc">0</b>discarded</div>
+      <div id="track" class="track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Videos reviewed"></div>
+      <div class="node"><b id="cKeep">0</b>kept</div>
+    </div>
+    <div id="fmt" class="seg" role="group" aria-label="Format filter" hidden><button type="button" data-fmt="all"></button><button type="button" data-fmt="long"></button><button type="button" data-fmt="shorts"></button></div>
+    <div id="chiprow" class="chiprow"><div id="chips" class="chips" hidden></div><button id="reroll" class="reroll" type="button" title="Show other tags" aria-label="Show other tags" hidden>&#8635;</button></div>
+    <div id="flock" class="flockbox" hidden>
+      <div class="flockhead"><b id="flockName"></b><span id="flockCount"></span><button id="fClose" class="xbtn" aria-label="Close">&times;</button></div>
+      <div class="flockacts">
+        <button id="fDiscard" class="btn primary">Discard all</button>
+        <button id="fFirst" class="btn ghost">Review first</button>
+        <button id="fKeep" class="btn quiet">Keep all</button>
+        <span class="sep"></span>
+        <button id="fProtect" class="btn small">Protect channel</button>
+        <button id="fBlock" class="btn small" hidden>Don't recommend channel</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="rail glass"><span id="srcLabel"></span></div>
+      <div class="deckwrap">
+        <div id="peek" class="peek" hidden><div class="frame"><img id="peekImg" alt="" draggable="false"></div></div>
+        <div id="card" class="card">
+          <div class="frame"><img id="thumb" alt="" draggable="false">
+            <span id="stampNo" class="stamp no">Discard</span><span id="stampYes" class="stamp yes">Keep</span>
+            <span class="br tl"></span><span class="br tr"></span><span class="br bl"></span><span class="br brr"></span>
+            <div class="cardtools">
+              <button id="bBlock" class="tool" hidden title="Don't recommend channel (↓)" aria-label="Don't recommend channel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg></button>
+              <button id="bProtect" class="tool" hidden title="Protect channel" aria-label="Protect channel" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8.2-7 10-4-1.8-7-5.4-7-10V6l7-3z"/></svg></button>
+            </div>
+          </div>
+          <div class="coord"><i></i><span id="pos">000 / 000</span><s></s></div>
+          <h2 id="ttl"></h2><p id="chn"></p>
+          <div id="samples" class="samples" hidden><div class="shead"><span>Watched or liked from this channel</span><button id="sNext" class="reroll" type="button" title="Show three more" aria-label="Show three more videos">&#8635;</button></div><div id="sGrid" class="sgrid"></div></div>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="bDiscard" class="pill dark">Discard</button>
+        <button id="bUndo" class="link">Undo</button>
+        <button id="bKeep" class="pill">Keep</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel stats"><div class="tab"><i></i>PANEL 02<em>CONTROL</em></div>
+    <div class="dialrow"><div class="dial"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="r0" cx="50" cy="50" r="46"/><circle class="r1" cx="50" cy="50" r="38"/><circle id="arc" class="arc" cx="50" cy="50" r="38" pathLength="100"/><g class="ticks"></g></svg><b id="pct">0%</b></div>
+    <div class="big"><span id="left">0</span><small>left to review</small></div></div>
+    <div id="how" class="how"></div>
+    <div class="srow list">
+        <button id="rules" class="li"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span>Rules</span><em>→</em></button>
+        <button id="rescan" class="li"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.5-5.8M20 4v5h-5"/></svg><span>Rescan</span><em>→</em></button>
+        <button id="clearSearch" class="li" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.5"/><path d="M15 15l5 5M8.5 8.5l4 4M12.5 8.5l-4 4"/></svg><span>Clear searches</span><em>→</em></button>
+        <button id="backup" class="li"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg><span>Backup</span><em>→</em></button>
+        <button class="li theme-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg><span class="tl"></span><em>→</em></button>
+        <button id="forget" class="li"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12M9 7V4h6v3M8 7l1 13h6l1-13"/></svg><span>Forget kept</span><em>→</em></button>
+        <button id="switch" class="li"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4L3 8l4 4M3 8h14M17 12l4 4-4 4M21 16H7"/></svg><span>Change source</span><em>→</em></button>
+      </div>
+  </div>
+
+  <div class="panel qpanel"><div class="tab"><i></i>PANEL 03<em>QUEUE</em></div>
+    <div class="qbar"><b>Queue</b><span id="qSummary"></span><button id="pause" class="link">Pause</button></div>
+    <div id="qList" class="qlist"></div>
+    <p id="qEmpty" class="msg">Discarded videos wait here before they are removed.</p>
+  </div>
+</section>
+<dialog id="law" class="panel">
+  <div class="lawhead"><b>Rules</b><button id="lawClose" class="link">Close</button></div>
+  <p class="how">Setups</p>
+  <div id="presetList" class="protlist"></div>
+  <form id="presetForm" class="ruleform"><input id="presetName" placeholder="Name the current rules + format" maxlength="40"><button class="link" type="submit">Save setup</button></form>
+  <p class="how">Rules queue matching videos for removal. Protected channels are never touched by rules or bulk actions. Check the preview, then apply.</p>
+  <div id="ruleList"></div>
+  <form id="ruleForm" class="ruleform">
+    <select id="ruleType"><option value="channel">Channel is</option><option value="keyword">Title contains</option><option value="short">Is a Short</option><option value="barely">Watched less than (%)</option><option value="older">Older than (months)</option></select>
+    <input id="ruleValue" placeholder="channel name">
+    <button class="pill" type="submit">Add rule</button>
+  </form>
+  <p class="how">Protected channels</p>
+  <div id="protList" class="protlist"></div>
+  <form id="protForm" class="ruleform"><input id="protValue" placeholder="Channel name"><button class="link" type="submit">Protect</button></form>
+  <p id="planNote" class="msg"></p>
+  <div class="setrow"><button id="exportSet" class="link" type="button">Export settings</button><button id="importSet" class="link" type="button">Import settings</button><input id="importFile" type="file" accept="application/json,.json" hidden></div>
+  <button id="applyRules" class="pill dark">Apply rules</button>
+</dialog>
+<dialog id="sure" class="panel sure" aria-labelledby="sureTitle">
+  <div class="tab"><i></i>CONFIRM<em id="sureStep"></em></div>
+  <h3 id="sureTitle"></h3>
+  <div id="sureBody" class="surebody"></div>
+  <label id="sureOpt" class="ack" hidden><input type="checkbox" id="sureOptBox"><span></span></label>
+  <label id="sureAck" class="ack" hidden><input type="checkbox" id="sureAckBox"><span></span></label>
+  <div class="sureacts">
+    <button id="sureNo" class="btn quiet" type="button">Cancel</button>
+    <button id="sureAlt" class="btn ghost" type="button" hidden></button>
+    <button id="sureYes" class="btn primary" type="button">Yes</button>
+  </div>
+</dialog>
+<script type="module" src="../js/core/Lets_Get_It_Started.js"></script></body></html>

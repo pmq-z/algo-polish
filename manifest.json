@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Algo Polish",
+  "version": "0.16.2",
+  "description": "Polish your algorithm: swipe through your liked videos or watch history, keep what you love, remove what you don't.",
+  "permissions": ["tabs", "scripting", "storage"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "background": { "service_worker": "js/background/Open_Sesame.js" },
+  "icons": {
+    "16": "icons/Pictures_Of_You_16.png",
+    "48": "icons/Pictures_Of_You_48.png",
+    "128": "icons/Pictures_Of_You_128.png"
+  },
+  "action": {
+    "default_title": "Open Algo Polish",
+    "default_icon": { "16": "icons/Pictures_Of_You_16.png", "48": "icons/Pictures_Of_You_48.png" }
+  }
+}

@@ -1,0 +1,16 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Python cache from tools/
+__pycache__/
+*.pyc
+
+# Packed builds and personal backups
+*.zip
+*.crx
+*.pem
+algo-polish-backup*.json
