@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Algo Polish
 
 Polish your algorithm. Swipe through your YouTube **liked videos**, **watch history**, **home feed** or **subscriptions**, keep what you love, and pick what to remove. Cleaner history means cleaner recommendations.
@@ -137,3 +138,7 @@ Settings such as the undo window, removal pace and minimum group size are at the
 - [Privacy](PRIVACY.md)
 - [Disclaimer](DISCLAIMER.md)
 - [License](LICENSE) (MIT)
+=======
+# algo-polish
+From time to time,  I like to clean old liked videos, watch history, etc. to better refine the algorithm to me. This project was born to streamline that process in a more eye-catching and less tedious way.
+>>>>>>> 558412eac4d28203d27ff8ed85dc483edd43f882
